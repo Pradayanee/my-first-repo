@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>📝 Task Tracker</h1>
+
+    <!-- Add Task Section -->
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <input type="date" id="taskDate" />
+      <select id="taskPriority">
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+      <button onclick="filterTasks('all')" class="filter-btn active">All</button>
+      <button onclick="filterTasks('pending')" class="filter-btn">Pending</button>
+      <button onclick="filterTasks('completed')" class="filter-btn">Completed</button>
+    </div>
+
+    <!-- Task Counter -->
+    <div class="counter">
+      <span id="totalCount">Total: 0</span>
+      <span id="completedCount">Completed: 0</span>
+      <span id="pendingCount">Pending: 0</span>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList"></ul>
+
+    <!-- Clear All Button -->
+    <button class="clear-btn" onclick="clearAll()">🗑️ Clear All Tasks</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
